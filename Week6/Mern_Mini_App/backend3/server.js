@@ -2,14 +2,14 @@ import exp from 'express';
 import { connect } from 'mongoose';
 import { empApp } from './APIs/EmployeeAPI.js';
 import cors from 'cors';
+import { config } from "dotenv";
+config();
 
 const app = exp();
-const port = 1000;
+const port = process.env.PORT || 1000;
 
 //CORS middleware
-app.use(cors({
-  origin: ['http://localhost:5173']
-}));
+app.use(cors());
 
 //body parser
 app.use(exp.json());
@@ -21,7 +21,7 @@ app.use("/employee-api", empApp);
 //DB connection,server
 async function connectDB() {
   try {
-    await connect('mongodb://127.0.0.1:27017/backend3db');
+ await connect(process.env.MONGO_URI);
     console.log("DB connection success");
     app.listen(port, () => {
       console.log(`Server running on port ${port}`);
