@@ -8,6 +8,7 @@ export const empApp = exp.Router();
 empApp.post("/employees", async (req, res) => {
   try {
     const newEmployee = req.body;
+    console.log(req.body);
     //validation
     if (!newEmployee.email || !newEmployee.name) {
       return res.status(400).json({
