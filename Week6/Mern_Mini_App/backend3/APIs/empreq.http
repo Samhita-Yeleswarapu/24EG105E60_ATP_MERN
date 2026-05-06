@@ -1,0 +1,29 @@
+### CREATE employee
+POST http://localhost:1000/employee-api/employees
+Content-Type: application/json
+
+{
+    "name": "Samhita",
+    "email": "samhita@gmail.com",
+    "mobile": "7995519098",
+    "designation": "Manager",
+    "companyName": "TCS"
+}
+
+### READ all employees
+GET http://localhost:1000/employee-api/employees
+
+### UPDATE employee
+PUT http://localhost:1000/employee-api/employees/samhita@gmail.com
+Content-Type: application/json
+
+{
+    "name": "Sam",
+    "email": "samhita@gmail.com",
+    "mobile": "7995519098",
+    "designation": "Manager",
+    "companyName": "Infosys"
+}
+
+### DELETE employee
+DELETE http://localhost:1000/employee-api/employees/samhita@gmail.com
