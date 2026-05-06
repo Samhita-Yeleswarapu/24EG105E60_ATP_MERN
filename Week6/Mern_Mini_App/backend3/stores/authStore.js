@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
-const API = "http://localhost:1000/employee-api";
+const API = import.meta.env.VITE_API_URL;
 
 export const useAuthStore = create((set) => ({
   user: null,
