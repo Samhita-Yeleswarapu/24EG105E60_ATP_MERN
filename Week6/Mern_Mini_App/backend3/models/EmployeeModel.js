@@ -39,7 +39,6 @@ const employeeSchema = new Schema(
     }
   },
   {
-    strict: "throw",
     versionKey: false,
     timestamps: true
   }
