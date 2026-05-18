@@ -4,60 +4,51 @@ import { EmployeeModel } from "../models/EmployeeModel.js";
 export const empApp = exp.Router();
 
 
-// CREATE employee
 empApp.post("/employees", async (req, res) => {
+
   try {
 
-    console.log("REQUEST BODY:", req.body);
+    console.log(req.body);
 
-    const { name, email } = req.body;
-
-    // validation
-    if (!name?.trim() || !email?.trim()) {
-      return res.status(400).json({
-        message: "Name and Email are required"
-      });
-    }
-
-    // check duplicate employee
-    const existingEmployee =
-      await EmployeeModel.findOne({ email });
-
-    if (existingEmployee) {
-      return res.status(400).json({
-        message: "Employee already exists"
-      });
-    }
-
-    // create employee
     const newEmployee =
-      new EmployeeModel({
-        name,
-        email
-      });
+      new EmployeeModel(req.body);
 
     const savedEmployee =
       await newEmployee.save();
 
     res.status(201).json({
-      message: "Employee created successfully",
+      message: "Employee created",
       payload: savedEmployee
     });
 
   } catch (error) {
 
-    console.log(
-      "CREATE EMPLOYEE ERROR:",
-      error
-    );
+    console.log("CREATE ERROR:", error);
+
+    // duplicate email/mobile
+    if (error.code === 11000) {
+
+      const duplicateField =
+        Object.keys(error.keyPattern)[0];
+
+      return res.status(400).json({
+        message: `${duplicateField} already exists`
+      });
+    }
+
+    // mongoose validation
+    if (error.name === "ValidationError") {
+
+      return res.status(400).json({
+        message: error.message
+      });
+    }
 
     res.status(500).json({
-      message: "Internal Server Error",
-      error: error.message
+      message: error.message
     });
   }
 });
-
 
 // READ all employees
 empApp.get("/employees", async (req, res) => {
