@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 30px auto;
+  text-align: center;
+}
+th, td {
+  border: 2px solid black;
+  padding: 15px;   
+}
+th {
+  font-size: 18px;
+}
+.subject {
+  font-weight: bold;
+  width: 150px;
+}
+.type {
+  width: 150px;
+}
+.marks {
+  width: 120px;
+}
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th colspan="2">Subject</th>
+    <th>John Doe</th>
+    <th>Miriam Luther</th>
+  </tr>
+  <tr>
+    <td rowspan="2" class="subject">Biology</td>
+    <td class="type">Practical</td>
+    <td class="marks">A</td>
+    <td class="marks">A</td>
+  </tr>
+  <tr>
+    <td class="type">Theory</td>
+    <td class="marks">A+</td>
+    <td class="marks">A</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="subject">Chemistry</td>
+    <td class="type">Practical</td>
+    <td class="marks">B</td>
+    <td class="marks">C</td>
+  </tr>
+  <tr>
+    <td class="type">Theory</td>
+    <td class="marks">A</td>
+    <td class="marks">C+</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="subject">Physics</td>
+    <td class="type">Practical</td>
+    <td class="marks">A</td>
+    <td class="marks">A</td>
+  </tr>
+  <tr>
+    <td class="type">Theory</td>
+    <td class="marks">A-</td>
+    <td class="marks">A-</td>
+  </tr>
+</table>
+</body>
+</html>
