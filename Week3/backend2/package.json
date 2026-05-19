@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.2.4",
+    "package.json": "^2.0.1"
+  },
+  "name": "backend2",
+  "version": "1.0.0",
+  "description": "1. generate package.json\r 2. create http server with express\r 3. install mongoose n connect to mongodb server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

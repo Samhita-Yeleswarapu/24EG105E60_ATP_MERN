@@ -1,0 +1,78 @@
+###read all users
+GET http://localhost:6000/user-api/users
+
+
+
+###read a user by id
+GET http://localhost:6000/user-api/user
+
+
+###create new user
+POST http://localhost:6000/user-api/users
+Content-Type: application/json   
+
+{   
+    "userName":"Samhi",
+    "password":"Samhita",
+    "email":"sam@gmail.com",
+    "age":19
+}
+
+
+
+###update a user
+PUT http://localhost:6000/user-api/users/69aa91658171f81562e02607
+Content-Type: application/json
+
+{   
+    "userName":"Samhi",
+    "password":"Samhita14",
+    "email":"samhita@gmail.com",
+    "age":19
+}
+
+###delete a user by id
+DELETE http://localhost:6000/user-api/users/69aa91658171f81562e02607
+
+###add product to user cart
+PUT http://localhost:6000/user-api/cart/product-id/
+Content-Type: application/json
+
+
+
+###---------------------------------------------------------------###
+
+###create new product
+POST http://localhost:6000/product-api/products
+Content-Type: application/json
+
+{
+"productId":67890,
+"productName":"Cream",
+"brand":"Dove",
+"price":150
+}
+
+
+###read all products
+GET http://localhost:6000/product-api/products
+
+
+###Read all products by productId
+GET http://localhost:6000/product-api/products/69bd3ea3cbb29780acc0fe1a
+
+
+###Update a product
+PUT http://localhost:6000/product-api/products/69bd3ea3cbb29780acc0fe1a
+Content-Type: application/json
+
+{
+"productId":23456,
+"productName":"Oil",
+"brand":"Fortune",
+"price":150
+}
+
+
+###delete a product by id 
+DELETE http://localhost:6000/product-api/products/69bd3ea3cbb29780acc0fe1a
