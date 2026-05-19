@@ -3,25 +3,10 @@ This Directory contains four beginner-friendly frontend development projects cre
 These projects demonstrate important frontend concepts such as:
 
 HTML structure\
-CSS styling\
-Flexbox layouts\
-Tables\
-React components\
-Props\
-Hooks\
-Dynamic rendering\
-Tailwind CSS
-### Programs Included
-1. Flexbox Layout
-2. Tables
-3. Product-react-app
-4. User-Details-react-app
+CSS styling
 ### Technologies Used
 HTML\
-CSS\
-JavaScript (ES6)\
-React JS\
-Tailwind CSS
+CSS
 #### Technologies Used For Vite
 React JS\
 Vue JS\
